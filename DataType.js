@@ -5,5 +5,9 @@ let measurementsOne = "measure around your chest";
 let measurementsTwo = "measure around your hip bone";
 let measurementsThree = "measure around your seat";
 
+let dressLength = "knee-length";
+let dressSleeveLength = "short sleeves";
+
+
 
 
