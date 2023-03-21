@@ -8,6 +8,10 @@ let measurementsThree = "measure around your seat";
 let dressLength = "knee-length";
 let dressSleeveLength = "short sleeves";
 
+let dressFabric = "cotton";
+let dressFashion = "streight cut";
+
+
 
 
 
