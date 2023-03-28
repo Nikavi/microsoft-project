@@ -5,29 +5,29 @@ function greet() {
 
 console.log(greet()); // Output: "Hello, nice to see you, please put your data in system"
 
-let measurementsOne = "measure around your chest";
-let measurementsTwo = "measure around your hip bone";
-let measurementsThree = "measure around your seat";
+let measurementsChest = "measure around your chest";
+let measurementsHipBone = "measure around your hip bone";
+let measurementsSeat = "measure around your seat";
 
-function addMeasurementOne(value) {
-  measurementsOne += `: ${value} inches`;
+function addMeasurementChest(value) {
+  measurementsChest += `: ${value} inches`;
 }
 
-function addMeasurementTwo(value) {
-  measurementsTwo += `: ${value} inches`;
+function addMeasurementHipBone(value) {
+  measurementsHipBone += `: ${value} inches`;
 }
 
-function addMeasurementThree(value) {
-  measurementsThree += `: ${value} inches`;
+function addMeasurementSeat(value) {
+  measurementsSeat += `: ${value} inches`;
 }
 
-addMeasurementOne(36); // adds measurement value of 36 inches to measurementsOne variable
-addMeasurementTwo(42); // adds measurement value of 42 inches to measurementsTwo variable
-addMeasurementThree(38); // adds measurement value of 38 inches to measurementsThree variable
+addMeasurementChest(36); // adds measurement value of 36 inches to measurementsOne variable
+addMeasurementHipBone(42); // adds measurement value of 42 inches to measurementsTwo variable
+addMeasurementSeat(38); // adds measurement value of 38 inches to measurementsThree variable
 
-console.log(measurementsOne); // Output: "measure around your chest: 36 inches"
-console.log(measurementsTwo); // Output: "measure around your hip bone: 42 inches"
-console.log(measurementsThree); // Output: "measure around your seat: 38 inches"
+console.log(measurementsChest); // Output: "measure around your chest: 36 inches"
+console.log(measurementsHipBone); // Output: "measure around your hip bone: 42 inches"
+console.log(measurementsSeat); // Output: "measure around your seat: 38 inches"
 
 let dressLength = ["kneeLength", "heelsLength", "averageLength", "shortLength"];
 let dressSleeveLength = ["shortSleeves", "mediumSleeves", "longSleeves"];
