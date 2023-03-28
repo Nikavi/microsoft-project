@@ -116,3 +116,35 @@ function recommendDressLength(height) {
     return dressLength[1]; // heelsLength
   }
 }
+
+// Korey's Changes 
+
+function greet() {
+  const message = "Hello, nice to see you, please put your data in system";
+  return message;
+}
+
+console.log(greet()); // Output: "Hello, nice to see you, please put your data in system"
+
+let chest = {
+  type: "chest",
+  size: 32,
+};
+let hip = {
+  type: "hip",
+  size: 33,
+};
+
+let seat = {
+  type: "seat",
+  size: 33,
+};
+
+function addMeasurment(type, size) {
+  console.log(`The Measurement Around Your is ${type}: ${size} inches`);
+}
+
+addMeasurment(seat.type, seat.size);
+addMeasurment(hip.type, hip.size);
+addMeasurment(chest.type, chest.size);
+
