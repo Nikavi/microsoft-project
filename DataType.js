@@ -31,10 +31,10 @@ console.log(measurementsChest); // Output: "measure around your chest: 36 inches
 console.log(measurementsHipBone); // Output: "measure around your hip bone: 42 inches"
 console.log(measurementsSeat); // Output: "measure around your seat: 38 inches"
 
-let dressLength = ["kneeLength", "heelsLength", "averageLength", "shortLength"];
-let dressSleeveLength = ["shortSleeves", "mediumSleeves", "longSleeves"];
-let dressFabric = ["cotton", "viscose", "silk", "tencelLyocell", "elastane"];
-let dressFashion = ["streightCut", "freeCut", "taperedCut"];
+let dressLength = ["knee Length", "heels Length", "average Length", "short Length"];
+let dressSleeveLength = ["Short Sleeves", "Medium Sleeves", "Long Sleeves"];
+let dressFabric = ["cotton", "viscose", "silk", "tencel Lyocell", "elastane"];
+let dressFashion = ["streight Cut", "free Cut", "tapered Cut"];
 
 const dressSizeUniverse = ["xs", "s", "m", "l", "xl", "xxl"];
 const dressSizeWomen = [34, 36, 38, 40, 42, 44, 46, 48];
@@ -116,3 +116,25 @@ function recommendDressLength(height) {
     return dressLength[1]; // heelsLength
   }
 }
+
+let chest = {
+  type: "chest",
+  size: 32,
+};
+let hip = {
+  type: "hip",
+  size: 33,
+};
+
+let seat = {
+  type: "seat",
+  size: 33,
+};
+
+function addMeasurment(type, size) {
+  console.log(`The Measurement Around Your is ${type}: ${size} inches`);
+}
+
+addMeasurment(seat.type, seat.size);
+addMeasurment(hip.type, hip.size);
+addMeasurment(chest.type, chest.size);
