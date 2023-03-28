@@ -1,9 +1,12 @@
-function greet() {
-  const message = "Hello, nice to see you, please put your data in system";
-  return message;
-}
 
-console.log(greet()); // Output: "Hello, nice to see you, please put your data in system"
+// function with a parameter called name
+function displayGreeting(name) {
+  // creating a new local variable that inserts the name into a string
+  const message = `Hello, ${name} , welcome to our TryOnStore!`;
+  // printing the variable to the console
+  console.log(message);
+}
+displayGreeting("Suzanna");
 
 let measurementsChest = "measure around your chest";
 let measurementsHipBone = "measure around your hip bone";
@@ -21,9 +24,9 @@ function addMeasurementSeat(value) {
   measurementsSeat += `: ${value} inches`;
 }
 
-addMeasurementChest(36); // adds measurement value of 36 inches to measurementsOne variable
-addMeasurementHipBone(42); // adds measurement value of 42 inches to measurementsTwo variable
-addMeasurementSeat(38); // adds measurement value of 38 inches to measurementsThree variable
+addMeasurementChest(36); // adds measurement value of 36 inches to measurementsChest variable
+addMeasurementHipBone(42); // adds measurement value of 42 inches to measurementsHipBone variable
+addMeasurementSeat(38); // adds measurement value of 38 inches to measurementsSeat variable
 
 console.log(measurementsChest); // Output: "measure around your chest: 36 inches"
 console.log(measurementsHipBone); // Output: "measure around your hip bone: 42 inches"
@@ -34,7 +37,7 @@ let dressSleeveLength = ["shortSleeves", "mediumSleeves", "longSleeves"];
 let dressFabric = ["cotton", "viscose", "silk", "tencelLyocell", "elastane"];
 let dressFashion = ["streightCut", "freeCut", "taperedCut"];
 
-const dressSize = ["xs", "s", "m", "l", "xl", "xxl"];
+const dressSizeUniverse = ["xs", "s", "m", "l", "xl", "xxl"];
 const dressSizeWomen = [34, 36, 38, 40, 42, 44, 46, 48];
 const dressSizeMen = [44, 46, 48, 50, 52, 54];
 
@@ -71,7 +74,7 @@ function chooseFashion(fashion) {
 }
 
 function chooseSize(size) {
-  if (dressSize.includes(size)) {
+  if (dressSizeUniverse.includes(size)) {
     console.log(`You have chosen the dress size: ${size}`);
   } else {
     console.log("Please choose a valid dress size.");
@@ -99,18 +102,9 @@ chooseLength("kneeLength"); // Output: "You have chosen the dress length: kneeLe
 chooseSleeveLength("shortSleeves"); // Output: "You have chosen the dress sleeve length: shortSleeves"
 chooseFabric("cotton"); // Output: "You have chosen the dress fabric: cotton"
 chooseFashion("streightCut"); // Output: "You have chosen the dress fashion: streightCut"
-chooseSize("m"); // Output: "You have chosen the dress size: m"
+chooseSizeUniverse("m"); // Output: "You have chosen the dress size: m"
 chooseSizeWomen(38); // Output: "You have chosen the women's dress size: 38"
 chooseSizeMen(50); // Output: "You have chosen the men's dress size: 50"
-
-// function with a parameter called name
-function displayGreeting(name) {
-  // creating a new local variable that inserts the name into a string
-  const message = `Hello, ${name} , welcome to our TryOnStore!`;
-  // printing the variable to the console
-  console.log(message);
-}
-displayGreeting("Suzanna");
 
 function recommendDressLength(height) {
   if (height < 160) {
