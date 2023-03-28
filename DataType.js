@@ -21,7 +21,7 @@ function addMeasurementHipBone(value) {
 
 function addMeasurementSeat(value) {
   measurementsSeat += `: ${value} inches`;
-}
+} 
 
 addMeasurementChest(36); // adds measurement value of 36 inches to measurementsChest variable
 addMeasurementHipBone(42); // adds measurement value of 42 inches to measurementsHipBone variable
