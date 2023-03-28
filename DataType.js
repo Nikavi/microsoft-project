@@ -1,4 +1,3 @@
-
 // function with a parameter called name
 function displayGreeting(name) {
   // creating a new local variable that inserts the name into a string
