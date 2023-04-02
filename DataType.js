@@ -21,7 +21,7 @@ function addMeasurementHipBone(value) {
 
 function addMeasurementSeat(value) {
   measurementsSeat += `: ${value} inches`;
-} 
+}
 
 addMeasurementChest(36); // adds measurement value of 36 inches to measurementsChest variable
 addMeasurementHipBone(42); // adds measurement value of 42 inches to measurementsHipBone variable
@@ -31,7 +31,12 @@ console.log(measurementsChest); // Output: "measure around your chest: 36 inches
 console.log(measurementsHipBone); // Output: "measure around your hip bone: 42 inches"
 console.log(measurementsSeat); // Output: "measure around your seat: 38 inches"
 
-let dressLength = ["knee Length", "heels Length", "average Length", "short Length"];
+let dressLength = [
+  "knee Length",
+  "heels Length",
+  "average Length",
+  "short Length",
+];
 let dressSleeveLength = ["Short Sleeves", "Medium Sleeves", "Long Sleeves"];
 let dressFabric = ["cotton", "viscose", "silk", "tencel Lyocell", "elastane"];
 let dressFashion = ["streight Cut", "free Cut", "tapered Cut"];
@@ -80,6 +85,12 @@ function chooseSize(size) {
   }
 }
 
+if (dressSizeUniverse.indexOf("s") !== -1) {
+  console.log("Size 's' is available.");
+} else {
+  console.log("Size 's' is not available.");
+}
+
 function chooseSizeWomen(size) {
   if (dressSizeWomen.includes(size)) {
     console.log(`You have chosen the women's dress size: ${size}`);
@@ -95,6 +106,12 @@ function chooseSizeMen(size) {
     console.log("Please choose a valid men's dress size.");
   }
 }
+
+// check the size between comparison operator
+const size = 42;
+const sizeMessage =
+  size > 40 ? "You need a large size." : "You need a medium size.";
+console.log(sizeMessage);
 
 // Example usage
 chooseLength("kneeLength"); // Output: "You have chosen the dress length: kneeLength"
