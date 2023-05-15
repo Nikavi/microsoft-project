@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Size Guide Example</title>
+    <style>
+        input[type="number"] {
+            width: 50px;
+            border: 1px solid #ccc;
+            padding: 8px;
+            margin-right: 10px;
+            font-size: 16px;
+            font-family: 'Helvetica Neue', sans-serif;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #000;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            float: left;
+            margin-right: 20px;
+        }
+
+        #size-guide {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        #size-guide div {
+            display: flex;
+            flex-direction: column;
+        }
+
+       .input-row {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .input-row label {
+            margin-right: 10px;
+        }
+
+        .input-row input {
+            margin-right: 10px;
+        }
+
+        .button-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .button-row button {
+            margin-right: 10px;
+        }
+
+         .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100px;
+            background-color: #f1f1f1;
+        }
+        
+        .logo img {
+            max-height: 80px;
+            margin: 0 20px;
+        }
+        
+    </style>
+    <script>
+        function updateSize() {
+            var bust = document.getElementById("bust").value;
+            var waist = document.getElementById("waist").value;
+            var hips = document.getElementById("hips").value;
+
+            var size = "";
+
+            if (bust < 32 && waist < 24 && hips < 34) {
+                size = "XS";
+            } else if (bust < 34 && waist < 26 && hips < 36) {
+                size = "S";
+            } else if (bust < 36 && waist < 28 && hips < 38) {
+                size = "M";
+            } else if (bust < 38 && waist < 30 && hips < 40) {
+                size = "L";
+            } else if (bust < 40 && waist < 32 && hips < 42) {
+                size = "XL";
+            } else {
+                size = "N/A";
+            }
+
+            document.getElementById("size").innerHTML = size;
+               
+            // Match size with product options
+            var selectOptions = document.querySelectorAll('#product-size option');
+            var matchFound = false;
+            for (var i = 0; i < selectOptions.length; i++) {
+                if (selectOptions[i].value == size) {
+                    document.getElementById("product-size").value = size;
+                    matchFound = true;
+                    break;
+                }
+            }
+            if (!matchFound) {
+                document.getElementById("product-size").value = "N/A";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="logo">
+        <img src="image/sharing-logo_150x.png" alt="Brand Logo">
+    </div>
+    <div id="size-guide">
+        <img src="image/dresscm.jpeg" alt="Size Guide Image">
+        <div>
+            <div class="input-row">
+                <label for="bust">Bust:</label>
+                <input type="number" id="bust" name="bust" onchange="updateSize()">
+            </div>
+
+            <div class="input-row">
+                <label for="waist">Waist:</label>
+                <input type="number" id="waist" name="waist" onchange="updateSize()">
+            </div>
+
+            <div class="input-row">
+                <label for="hips">Hips:</label>
+                <input type="number" id="hips" name="hips" onchange="updateSize()">
+            </div>
+
+            <div class="button-row">
+                <button onclick="updateSize()">Find My Size</button>
+            </div>
+        </div>
+
+        <div>
+            <p>Your recommended size is <span id="size"></span>.</p>
+        </div>
+    </div>
+</body>

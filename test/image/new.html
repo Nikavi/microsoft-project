@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Size Guide Example</title>
+    <style>
+        input[type="number"] {
+            width: 50px;
+            border: 1px solid #ccc;
+            padding: 8px;
+            margin-right: 10px;
+            font-size: 16px;
+            font-family: 'Helvetica Neue', sans-serif;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #000;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            float: left;
+            margin-right: 20px;
+        }
+
+        #size-guide {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        #size-guide div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #size-output {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #size-output p {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function updateSize() {
+            var bust = document.getElementById("bust").value;
+            var waist = document.getElementById("waist").value;
+            var hips = document.getElementById("hips").value;
+
+            var size = "";
+
+            if (bust < 32 && waist < 24 && hips < 34) {
+                size = "XS";
+            } else if (bust < 34 && waist < 26 && hips < 36) {
+                size = "S";
+            } else if (bust < 36 && waist < 28 && hips < 38) {
+                size = "M";
+            } else if (bust < 38 && waist < 30 && hips < 40) {
+                size = "L";
+            } else if (bust < 40 && waist < 32 && hips < 42) {
+                size = "XL";
+            } else {
+                size = "N/A";
+            }
+
+            document.getElementById("size").innerHTML = size;
+        }
+
+        function showSizeOutput() {
+            var bust = document.getElementById("bust").value;
+            var waist = document.getElementById("waist").value;
+            var hips = document.getElementById("hips").value;
+
+            if (bust != "" && waist != "" && hips != "") {
+                document.getElementById("size-output").style.display = "block";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="size-guide">
+        <img src="dresscm.jpeg" alt="Size Guide Image">
+        <div>
+            <div class="input-row">
+                <label for="bust">Bust:</label>
+                <input type="number" id="bust" name="bust">
+            </div>
+
+            <div class="input-row">
+                <label for="waist">Waist:</label>
+                <input type="number" id="waist" name="waist">
+            </div>
+
+            <div class="input-row">
+                <label for="hips">Hips:</label>
+                <input type="number" id="hips" name="hips">
+            </div>
+
+            <button onclick="updateSize()">Find My Size</button>
+
+            <p id="size-message" style="display: none;">Your recommended size is <span id="size"></span>.</p>
+        </div>
+    </div>
+</body>
